@@ -16,15 +16,23 @@ import { HomeComponent } from './components/home/home.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpErrorsInterceptor } from './interceptors/http-errors.interceptor';
 import { HttpHeadersInterceptor } from './interceptors/http-headers.interceptor';
+import { DetailsComponent } from './components/details/details.component';
+import { GameTabsComponent } from './components/game-tabs/game-tabs.component';
 const routes:Routes=[
   {path:'',component:HomeComponent},
-  {path:'search/:game-search',component:HomeComponent}
+  {path:'search/:game-search',component:HomeComponent},
+  {
+    path: 'details/:id',
+    component: DetailsComponent,
+  }
 ];
 @NgModule({
   declarations: [
     AppComponent,
     SearchBarComponent,
-    HomeComponent
+    HomeComponent,
+    DetailsComponent,
+    GameTabsComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
